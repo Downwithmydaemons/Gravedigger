@@ -89,7 +89,7 @@ if 'DNS' in detected_services:
         print("Running dig....")
         cmd = ["dig", "any", target]
         subprocess.run(cmd, stdout=r)
-        print(colored('Output located in DNS.txt', 'yellow'))
+        print(colored('Output located in DNS.txt.', 'yellow'))
 
 if 'RPC' in detected_services or 'SMB445' in detected_services:
     with open("Anon_logon.txt", "w") as r:
@@ -100,7 +100,7 @@ if 'RPC' in detected_services or 'SMB445' in detected_services:
         print("Running nxc smb....")
         cmd = ["nxc", "smb", target, "-u", "", "-p", "", "--shares"]
         subprocess.run(cmd, stdout=r)
-        print(colored('Output located in Anon_logon.txt', 'yellow'))
+        print(colored('Output located in Anon_logon.txt.', 'yellow'))
 
 if 'HTTP' in detected_services or 'HTTPS' in detected_services:
     print(colored('HTTP/HTTPS', 'red'),"is Present")
@@ -113,21 +113,21 @@ if 'HTTP' in detected_services or 'HTTPS' in detected_services:
             print("ffufing directories....")
             cmd = ["ffuf", "-w", "/usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt:FUZZ", "-u", f"http://{target}/FUZZ"]
             subprocess.run(cmd, stdout=r)
-            print(colored('Output located in http.txt', 'yellow'))
+            print(colored('Output located in http.txt.', 'yellow'))
     elif fuff_runner == "N":
         print("Skipping ffuf...")
     else:
         print("Invalid input. Please enter 'Y' or 'N'.")
 
 if 'RDP' in detected_services:
-    print(colored('RDP', 'red'),"is open on standard port, come back when you have credientals")
+    print(colored('RDP', 'red'),"is open on standard port, come back when you have credientals.")
 
 if 'WINRM' in detected_services:
-    print(colored('WINRM', 'red'),"is open on standard port, come back when you have credientals")
+    print(colored('WINRM', 'red'),"is open on standard port, come back when you have credientals.")
 
 # Output unknown ports
 if unknown_ports:
-    print(colored("Ports not without known services found:", 'green'))
+    print(colored("Ports without known services found:", 'green'))
     for port in sorted(unknown_ports, key=int):
         print(colored(port, 'blue'))
 
