@@ -11,11 +11,11 @@ Required tools:
 ---
 ## Install
 
-1. To Install Netexec, ffuf and enum4linux-ng simply run the install script `sh install.sh`
+1. To Install Netexec, ffuf and enum4linux-ng simply run the install script `sh install.sh`.
 
-2. For Rustscan you will need to download and install the binary from [here](https://github.com/RustScan/RustScan/releases) and change the name to "rustscan_binary" `sudo mv /usr/bin/rustscan /usr/bin/rustscan_binary`
+2. For Rustscan you will need to download and install the binary from [here](https://github.com/RustScan/RustScan/releases) and change the name to "rustscan_binary" `sudo mv /usr/bin/rustscan /usr/bin/rustscan_binary`.
 
-3. dig and seclist should be installed by default on kali
+3. Dig and Seclist should be installed by default on kali.
 
 ## Usage
 ```
