@@ -4,10 +4,10 @@ Enumeration automation tool that allow the automation of routine tasks.
 Required tools:
 - Rustscan binary
 - Netexec
-- dig 
-- ffuf
+- Dig 
+- FFuF
 - Enum4linux-ng
-- seclist
+- Seclist
 ---
 ## Install
 
