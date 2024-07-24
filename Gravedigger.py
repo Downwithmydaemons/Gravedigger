@@ -171,6 +171,7 @@ if 'HTTP' in detected_services or 'HTTPS' in detected_services:
                 print(" ".join(cmd))
                 subprocess.run(cmd, stdout=r, stderr=subprocess.PIPE, universal_newlines=True)
                 print(colored('Output located in http.txt.', 'yellow'))
+                print(colored(f"Automated VHOST fuzzing currently unavaible run the following if you wish to check for vhosts: \nffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://{Hosty}/ -H 'Host: FUZZ.{Hosty}' -ac", "green"))
         else:
             print("Invalid input. Please enter 'IP' or 'HOSTNAME'.")
     elif fuff_runner == "N":
@@ -178,12 +179,14 @@ if 'HTTP' in detected_services or 'HTTPS' in detected_services:
     else:
         print("Invalid input. Please enter 'Y' or 'N'.")
 
+
+"""BROKEN Vhost hunter
     sub_runner = input("Would you like to fuzz for vhosts? /n **Hostname is required** (Y/N): ").strip().upper()
     Hostt = input("What is the hostname?: ")
     if sub_runner == "Y":
         with open("Subhost.txt", "w") as r:
             print("ffufing vhosts....")
-            cmd = ["ffuf", "-w", "/usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ", "-u", f"http://{Hostt}/", "-H", f"'Host: FUZZ.{Hostt}'"]
+            cmd = ["wfuzz", "-H", f"'Host: FUZZ.{Hostt}'", "--hc", "404,403,301", "-H", "'User-Agent: PENTEST'", "-c", "-z", "file,'/usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt'", f"{target}"]
             print(" ".join(cmd))
             subprocess.run(cmd, stdout=r, stderr=subprocess.PIPE, universal_newlines=True)
             print(colored('Output located in Subhost.txt.', 'yellow'))
@@ -191,6 +194,7 @@ if 'HTTP' in detected_services or 'HTTPS' in detected_services:
         print("Skipping ffuf...")
     else:
         print("Invalid input. Please enter 'Y' or 'N'.")
+"""
 
 ##############################RDP##############################
 if 'RDP' in detected_services:
