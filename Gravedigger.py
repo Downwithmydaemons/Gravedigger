@@ -24,6 +24,7 @@ def is_valid_ip(ip):
 print(colored('╦ ╦┌─┐┌─┐┬  ┌─┐┌┬┐┌─┐  ┌┬┐┌─┐  ┌┬┐┬ ┬┌─┐  ┌─┐┬─┐┌─┐┬  ┬┌─┐┬ ┬┌─┐┬─┐┌┬┐', 'green'))
 print(colored('║║║├┤ │  │  │ ││││├┤    │ │ │   │ ├─┤├┤   │ ┬├┬┘├─┤└┐┌┘├┤ └┬┘├─┤├┬┘ ││', 'red'))
 print(colored('╚╩╝└─┘└─┘┴─┘└─┘┴ ┴└─┘   ┴ └─┘   ┴ ┴ ┴└─┘  └─┘┴└─┴ ┴ └┘ └─┘ ┴ ┴ ┴┴└──┴┘', 'green'))
+print(colored('\nBy DownwithmyDaemons', 'red'))
 
 # User input with validation
 while True:
